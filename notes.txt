@@ -1,0 +1,4 @@
+alf animation: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/alfanimationprtp.mp4
+awscc event teaser: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC+Event+Teaser.mp4
+awscc final alf launch: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/final+alf+lunch.mp4
+awscc logo: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo

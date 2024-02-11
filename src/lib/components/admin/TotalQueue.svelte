@@ -1,0 +1,10 @@
+<script lang="ts">
+  import { User } from 'phosphor-svelte'
+
+  export let totalQueue = 0
+</script>
+
+<div class="w-full h-[57px] bg-black rounded-lg flex items-center p-4 gap-2">
+  <User size={20} weight="fill"/>
+  <p>Total Queue: {totalQueue}</p>
+</div>
