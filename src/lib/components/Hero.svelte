@@ -14,15 +14,15 @@
     });
 </script>  
 
-<!-- <div class="hero flex justify-center items-center">
+<div class="hero flex justify-center items-center">
     <video bind:this={videoElement} autoplay muted id="awsccvideo">
         <source src={videoLinks[currentVideoIndex]} type="video/mp4">
     </video>
-</div> -->
-
-<div class="hero min-h-screen">
-    <div class="hero-overlay bg-opacity-60"></div>
 </div>
+
+<!-- <div class="hero min-h-screen">
+    <div class="hero-overlay bg-opacity-60"></div>
+</div> -->
 
 
 <style>
@@ -33,10 +33,10 @@
         width: 100%;
         background-image: url('https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWS-Cloud-Club.jpg');
     }
-    /* #awsccvideo {
+    #awsccvideo {
         position: relative;
         width: 100%;
         height:  100%;
         object-fit: cover;
-    } */
+    }
 </style>
