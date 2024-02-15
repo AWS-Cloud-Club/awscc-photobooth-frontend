@@ -7,12 +7,15 @@
     import { data } from '$lib/index';
     import { Envelope } from "phosphor-svelte";
     import { chosenRequest } from "$lib/stores/RequestStore";
+	import { onMount } from "svelte"
 
     let requestQueue =  data;
     let requestData:any = {};
     let emails:string[] = [];
     let status:string = "";
     let point_person:string = "";
+    let request_id:string = "";
+    let showRequest:boolean = false;
 
     chosenRequest.subscribe(value => {
         console.log("Chosen Request", value);
@@ -24,7 +27,16 @@
         emails = requestData?.emails;
         status = requestData?.status;
         point_person = requestData?.point_person;
+        request_id = requestData?.request_id;
     }
+
+    onMount(() => {
+        setTimeout(() => {
+            if(localStorage.getItem("showRequest") === "true"){
+                showRequest = true;
+            }
+        }, 1000); 
+    });
 
 
 </script>
@@ -45,9 +57,11 @@
                 <Envelope size={40} color="white" />
                 <h3 class=" text-xl">Emails</h3>
             </div>
-            <DeleteButton />
+            <div class="pr-1">
+                <DeleteButton {request_id}/>
+            </div>
         </div>
-        <div>
+        <div class="w-full flex justify-center items-center px-9 pt-8">
             <EmailsContainer {emails}/>
         </div>
         {:else}

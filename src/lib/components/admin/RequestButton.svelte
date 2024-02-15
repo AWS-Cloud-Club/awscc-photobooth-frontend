@@ -7,8 +7,15 @@
   export let status:string = "";
   export let point_person:string = "";
 
+
   async function chooseRequest(){
     console.log("Request chosen", request_id);
+
+    if(localStorage.getItem("showRequest") === "true"){
+      localStorage.setItem("showRequest", "false");
+    } else {
+      localStorage.setItem("showRequest", "true");
+    }
 
     chosenRequest.set({
       request_id,
