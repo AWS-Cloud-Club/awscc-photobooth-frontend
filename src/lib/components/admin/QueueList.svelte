@@ -1,7 +1,16 @@
 <script lang="ts">
 
-  import { RequestButton } from "$lib/components/admin";
+  import { RequestButton, Filter } from "$lib/components/admin";
 	import { onMount } from "svelte"
+  import { chosenFilter } from "$lib/stores/FilterOptionStore";
+
+  let filterOption:string = "";
+
+  chosenFilter.subscribe((value) => {
+    console.log("Chosen Filter", value);
+    filterOption = value?.toUpperCase();
+  });
+
   interface QueueItem {
     request_id: string;
     emails: Array<string>;
@@ -13,7 +22,10 @@
 
 </script>
 
-<h2 class="text-black font-bold text-xl pl-2 pt-2">Requests:</h2>
+<div class="flex justify-between items-center">
+  <h2 class="text-black font-bold text-xl pl-2 pt-2"><span>{filterOption} Requests:</span></h2>
+  <Filter />
+</div>
 <div class="w-full h-screen rounded-lg overflow-y-auto px-2 py-2 gap-3 flex flex-col">
   {#each requestQueue as { request_id, emails, status, point_person } (request_id)}
       <RequestButton 

@@ -1,0 +1,26 @@
+[
+    {
+        "request_id": "2",
+        "point_person": "Migs",
+        "emails": ["rafael.louie.miguel@gmail.com", "miguel.rafaellouie2003@gmail.com", "luisa24@gmail.com", "meow@gmail.com", "iza@gmail.com", "lou@gmail.com", "alien@gmail.com"],
+        "status": "pending"
+    },
+    {
+        "request_id": "1",
+        "point_person": "Iza",
+        "emails": ["luisa24@gmail.com", "miguel.rafaellouie2003@gmail.com"],
+        "status": "sent"
+    },
+    {
+        "request_id": "5",
+        "point_person": "Aki",
+        "emails": ["aki@gmail.com", "asi@gmail.com"],
+        "status": "pending"
+    },
+    {
+        "request_id": "10",
+        "point_person": "Magisa",
+        "emails": ["magisa@gmail.com"],
+        "status": "pending"
+    }
+]
