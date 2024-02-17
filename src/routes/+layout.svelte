@@ -2,9 +2,11 @@
     import { Navbar, Footer } from "$lib/components/necessities";
 </script>
 
-<Navbar />
+<div class="scrollbar">
+    <Navbar />
     <slot />
-<Footer />
+    <Footer />
+</div>
 
 <style lang=scss>
 </style>

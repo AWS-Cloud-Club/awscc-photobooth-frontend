@@ -77,8 +77,25 @@
     });
 </script>
 
-<div class="grid grid-cols-10 grid-rows-5 h-[90vh]">
-    <div class="col-span-2 row-span-5 bg-slate-700">
+<!-- <div class="h-[90svh] flex">
+    <div class="md:w-[35svw] lg:    w-[30svw] xl:w-[25svw] p-6 space-y-5 bg-base-300">
+        <TotalQueue {totalQueue}/>
+        <div class="hide-scrollbar max-h-[70svh]">
+            <QueueList {requestQueue}/>
+        </div>
+    </div>
+    <div class="w-full">
+        {#if $chosenRequest}
+            
+        {:else}
+            <DefaultPane />
+        {/if}
+    </div>
+</div> -->
+
+
+<!-- <div class="grid grid-cols-10 grid-rows-5 h-[90vh]">
+    <div class="col-span-2 row-span-5 bg-slate-700 ">
         <div class="py-3 px-5 flex gap-2 flex-col h-[44.2rem]">
             <div class="px-2">
                 <TotalQueue {totalQueue}/>
@@ -86,7 +103,7 @@
             <QueueList {requestQueue}/>
         </div>
     </div>
-    <div class="col-span-8 row-span-5 col-start-3 bg-zinc-800">
+    <div class="col-span-8 row-span-5 col-start-3 bg-zinc-800 ">
         {#if $chosenRequest}
         <div class="w-full px-8 h-[3rem] flex justify-between items-center pt-8">
             <div class="flex items-center gap-2 text-white">
@@ -110,5 +127,24 @@
             <DefaultPane />
         {/if}
     </div>
-</div>
-    
+</div> -->
+
+<style>
+    .hide-scrollbar {
+        width: 100%;
+        height: 100svh;
+        overflow: auto;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar-thumb {
+        display: none;
+    }
+</style>

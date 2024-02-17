@@ -6,9 +6,7 @@
     <title>AWSCC-PUP Manila-Photobooth App</title>
 </svelte:head>
 
-<div>
-    <Hero />
-</div>
+<Hero />
 
 <style lang=scss>
 </style>

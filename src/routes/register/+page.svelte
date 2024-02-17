@@ -18,12 +18,16 @@
 
     let error: string = "";
 
+    // add condition, if emails empty, do not add email field
+    // toast, fill up email field
+
     function addEmailField() {
         formData = {
             ...formData,
             emails: [...formData.emails, { value: "" }]
         };
     }
+
 
     function removeEmailField(index: number) {
         if (formData.emails.length > 1) {
@@ -33,6 +37,8 @@
             };
         }
     }
+
+    // if input not valid, do not validate form/redirect form
 
     function validateForm() {
         const atLeastOneEmailFilled = formData.emails.some((email) => email.value.length > 0);
