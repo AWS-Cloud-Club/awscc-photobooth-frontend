@@ -5,6 +5,6 @@
 </div> -->
 
 
-<div class="bg-[#232323] w-full h-full flex flex-col justify-center items-center">
-    <img src="https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo" class="w-[250px] h-auto" alt="AWSCC Pup Manila Logo">
+<div class="w-full h-full flex flex-col justify-center items-center">
+    <img src="https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo" class="w-[250px] h-auto grayscale opacity-20" alt="AWSCC Pup Manila Logo">
 </div>

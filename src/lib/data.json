@@ -8,8 +8,8 @@
     {
         "request_id": "1",
         "point_person": "Iza",
-        "emails": ["luisa24@gmail.com", "miguel.rafaellouie2003@gmail.com"],
-        "status": "sent"
+        "emails": ["luisa24@gmail.com", "miguel.rafaellouie2003@gmail.com", "miguel.rafaellouie202203@gmail.com", "aki@gmail.com", "aki2222@gmail.com", "ak44444i@gmail.com", "ak45345i@gmail.com", "6766aki@gmail.com", "aksadi@gmail.com", "akivc@gmail.com", "magisa@gmail.com", "magwreisa@gmail.com"],
+        "status": "pending"
     },
     {
         "request_id": "5",
@@ -26,13 +26,13 @@
     {
         "request_id": "20",
         "point_person": "Magisa",
-        "emails": ["magisa@gmail.com"],
+        "emails": ["magi2sa@gmail.com"],
         "status": "pending"
     },
     {
         "request_id": "30",
         "point_person": "Magisa",
-        "emails": ["magisa@gmail.com"],
+        "emails": ["magis3a@gmail.com"],
         "status": "pending"
     }
 ]

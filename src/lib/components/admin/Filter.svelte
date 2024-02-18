@@ -16,13 +16,29 @@
         chosenFilter.set(option);
         console.log("Selected Option", selectedOption);
     }
+
+    function toSentenceCase(str: string): string {
+        if (!str) return str;
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
 </script>
 
-<div class="dropdown">
+<!-- <div class="dropdown">
   <div tabindex="0" role="button" class="btn m-1"> <Funnel /> Filter</div>
   <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
     {#each Object.keys(filterOptions) as option}
     <button on:click={() => selectOption(option)}>
+        <li class="menu-title">{filterOptions[option]}</li>
+    </button>
+    {/each}
+  </ul>
+</div> -->
+
+<div class="dropdown dropdown-bottom dropdown-end">
+  <div tabindex="0" role="button" class="btn mb-1 flex flex-between min-w-min"><Funnel />{toSentenceCase(selectedOption) || "Filter"}</div>
+  <ul tabindex="0" class="dropdown-content z-[1] menu shadow bg-base-100 rounded-lg">
+    {#each Object.keys(filterOptions) as option}
+    <button on:click={() => selectOption(option)} class="text-left hover:bg-base-200 active:bg-base-300">
         <li class="menu-title">{filterOptions[option]}</li>
     </button>
     {/each}

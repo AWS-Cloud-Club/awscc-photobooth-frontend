@@ -20,8 +20,8 @@
     </video>
 </div> -->
 
-<div class="hero min-h-screen">
-    <div class="hero-overlay bg-opacity-60"></div>
+<div class="hero h-[90svh]">
+    <div class="hero-overlay bg-opacity-40"></div>
 </div>
 
 

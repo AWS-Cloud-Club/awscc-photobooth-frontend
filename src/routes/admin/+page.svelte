@@ -77,65 +77,40 @@
     });
 </script>
 
-<!-- <div class="h-[90svh] flex">
-    <div class="md:w-[35svw] lg:    w-[30svw] xl:w-[25svw] p-6 space-y-5 bg-base-300">
+<div class="h-[90svh] flex">
+    <div class="md:w-[35svw] lg:w-[30svw] xl:w-[30svw] p-6 space-y-5 bg-base-300">
         <TotalQueue {totalQueue}/>
-        <div class="hide-scrollbar max-h-[70svh]">
+        <div class="hide-scrollbar overflow-y-auto max-h-[70svh]">
             <QueueList {requestQueue}/>
         </div>
     </div>
-    <div class="w-full">
+    <div class="w-full h-full p-10 flex space-x-6">
         {#if $chosenRequest}
-            
-        {:else}
-            <DefaultPane />
-        {/if}
-    </div>
-</div> -->
-
-
-<!-- <div class="grid grid-cols-10 grid-rows-5 h-[90vh]">
-    <div class="col-span-2 row-span-5 bg-slate-700 ">
-        <div class="py-3 px-5 flex gap-2 flex-col h-[44.2rem]">
-            <div class="px-2">
-                <TotalQueue {totalQueue}/>
+        <div class="h-full flex flex-col justify-center">
+            <div class="w-64 flex items-center space-x-1 bg-base-200 rounded-t-lg p-3">
+                <Envelope size={25} color="white" />
+                <h3 class=" text-lg">Emails</h3>
             </div>
-            <QueueList {requestQueue}/>
+            <div class="hide-scrollbar overflow-y-auto space-y-3 flex flex-col h-full p-3 bg-neutral shadow rounded-b-lg w-64">
+                <EmailsContainer {emails}/>
+            </div>
         </div>
-    </div>
-    <div class="col-span-8 row-span-5 col-start-3 bg-zinc-800 ">
-        {#if $chosenRequest}
-        <div class="w-full px-8 h-[3rem] flex justify-between items-center pt-8">
-            <div class="flex items-center gap-2 text-white">
-                <Envelope size={40} color="white" />
-                <h3 class=" text-xl">Emails</h3>
-            </div>
-            <div class="pr-1">
+        <div class="w-full h-[80svh] h-full flex flex-col items-center space-y-3">
+            <div class="w-full flex justify-end pb-1">
                 <DeleteButton {request_id}/>
             </div>
-        </div>
-        <div class="w-full flex justify-center items-center px-9 pt-8">
-            <EmailsContainer {emails}/>
-        </div>
-        <div class="pt-8 w-full h-[3rem] px-52">
             <RequestDetails {status} {point_person} {request_id}/>
-        </div>
-        <div class="flex justify-center items-center w-full h-[80h] pt-16 px-52">
             <UploadContainer {request_id}/>
         </div>
+        
         {:else}
             <DefaultPane />
         {/if}
     </div>
-</div> -->
+</div>
+
 
 <style>
-    .hide-scrollbar {
-        width: 100%;
-        height: 100svh;
-        overflow: auto;
-    }
-
     .hide-scrollbar::-webkit-scrollbar-track {
         display: none;
     }
