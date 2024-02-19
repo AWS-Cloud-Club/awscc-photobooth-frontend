@@ -1,7 +1,7 @@
 <script lang="ts">
     import { ImagesSquare, X } from "phosphor-svelte";
     export let request_id:string = "";
-
+    import { alfUFO } from '$lib/assets';
     let selectedImages: File[] = [];
 
     // async function uploadImages(){
@@ -15,7 +15,7 @@
     //         formData.append('request_id', request_id);
     //         console.log(formData);
     //         for (var pair of formData.entries()) {
-    //             console.log(pair[0]+ ', ' + pair[1]); 
+    //             console.log(pair[0]+ ', ' + pair[1]);
     //         }
     //     }
     //     selectedImages = [];
@@ -70,7 +70,7 @@
         <div class="hide-scrollbar overflow-y-auto h-full space-y-4 bg-base-300 p-4 rounded-lg shadow">
             {#if selectedImages.length === 0}
                 <div class="flex flex-col justify-center w-full items-center h-full">
-                    <img src="https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo" class="w-[75px] h-auto opacity-50" alt="AWSCC Pup Manila Logo">
+                    <img src="{alfUFO}" class="w-[75px] h-auto opacity-50" alt="AWSCC Pup Manila Logo">
                 </div>
             {:else}
                 {#each selectedImages as image, index (image.name)}

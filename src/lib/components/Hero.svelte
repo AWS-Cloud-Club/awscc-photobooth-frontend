@@ -3,9 +3,7 @@
     import { spaceHero } from '$lib/assets';
     // import { videoLinks } from '$lib/assets';
     let videoElement: HTMLVideoElement;
-    let currentVideoIndex = 0; 
-    let heroImage = 'https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWS-Cloud-Club.jpg';
-
+    let currentVideoIndex = 0;
     // onMount(() => {
     //     videoElement.addEventListener('ended', () => {
     //         currentVideoIndex = (currentVideoIndex + 1) % videoLinks.length;
@@ -13,7 +11,7 @@
     //         videoElement.play();
     //     });
     // });
-</script>  
+</script>
 
 <!-- <div class="hero flex justify-center items-center">
     <video bind:this={videoElement} autoplay muted id="awsccvideo">
@@ -23,9 +21,9 @@
 
 
 
-<!-- !!!!!!!!!!!!!!  pls fix d q mapagana pag tinatawag q si spaceHero !!!!!!!!!!!!!!!!  -->
+<!-- !!!!!!!!!!!!!!  s fix d q mapagana pag tinatawag q si spaceHero !!!!!!!!!!!!!!!!  -->
 
-<div class=" object-center bg-cover bg-center bg-[url('https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/PhotoboothCover.png')] w-full h-[90svh]">
+<div class=" object-center bg-cover bg-center bg-[url('https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/PhotoboothCover.png')] w-full h-[90svh]" style="background-image:({spaceHero})">
     <!-- <div class="hero-overlay bg-opacity-40"></div> -->
 </div>
 
