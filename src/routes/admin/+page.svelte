@@ -78,7 +78,7 @@
 </script>
 
 <div class="h-[90svh] flex">
-    <div class="md:w-[35svw] lg:w-[30svw] xl:w-[30svw] p-6 space-y-5 bg-base-300">
+    <div class="md:w-[35svw] lg:w-[30svw] xl:w-[30svw] p-6 space-y-5 bg-neutral">
         <TotalQueue {totalQueue}/>
         <div class="hide-scrollbar overflow-y-auto max-h-[70svh]">
             <QueueList {requestQueue}/>
@@ -87,11 +87,11 @@
     <div class="w-full h-full p-10 flex space-x-6">
         {#if $chosenRequest}
         <div class="h-full flex flex-col justify-center">
-            <div class="w-64 flex items-center space-x-1 bg-base-200 rounded-t-lg p-3">
-                <Envelope size={25} color="white" />
+            <div class="w-64 flex items-center space-x-1 bg-base-300 text-base-content rounded-t-lg p-5">
+                <Envelope size={25} weight="fill" />
                 <h3 class=" text-lg">Emails</h3>
             </div>
-            <div class="hide-scrollbar overflow-y-auto space-y-3 flex flex-col h-full p-3 bg-neutral shadow rounded-b-lg w-64">
+            <div class="hide-scrollbar overflow-y-auto space-y-3 flex flex-col h-full px-5 pb-5 bg-base-300 shadow rounded-b-lg w-64">
                 <EmailsContainer {emails}/>
             </div>
         </div>

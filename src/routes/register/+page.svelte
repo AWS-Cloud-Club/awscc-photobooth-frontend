@@ -52,8 +52,8 @@
         console.log("newIndex", newIndex)
         if (newIndex == 1){
             currentAlfIndex = 0;
-        } else if (newIndex >= 2 && newIndex <= 6) {
-            currentAlfIndex = Math.floor(newIndex / 2);
+        } else if (newIndex >= 2 && newIndex <= 4) {
+            currentAlfIndex = newIndex - 1;
         } else {
             currentAlfIndex = 3;
         }
@@ -99,11 +99,11 @@
 </script>
 
 <div class="h-[90svh] flex justify-center items-center bg-cover bg-center bg-no-repeat relative" style=" background-image: url({space})">
-    <div class="absolute inset-0 bg-base-300 opacity-50 h-[90svh]"></div>
+    <div class="absolute inset-0 bg-base-300 opacity-20 h-[90svh]"></div>
     <div class="flex relative">
         <img src="{imgSrc}" alt="AWSCC PUP - Alf" class="h-[300px] absolute -left-10 bottom-0 z-[1] hidden lg:block sm:hidden md:h-[325px] xl:h-[350px]"/>
         <div class="w-[280px] hidden lg:block sm:hidden md:w-[280px] xl:w-[315px]"></div>
-        <div class="bg-base-200 bg-opacity-80 rounded-2xl shadow-md h-[70svh]">
+        <div class="bg-base-100 bg-opacity-80 rounded-2xl shadow-md h-[70svh]">
             <form on:submit|preventDefault={validateForm} class="flex flex-col justify-between h-full">
                 <div class="space-y-4 flex-1 h-full">
                     <div class="space-y-2 bg-base-300 px-10 pt-10 pb-5 rounded-t-xl">
@@ -119,8 +119,8 @@
                                 Email Address {index + 1}
                             </div>
                             <div class="flex space-x-2">
-                                <input type="email" placeholder="Email Address" class="input input-bordered input-base-300 w-60 sm:w-72 md:w-96 xl:w-96" bind:value={formData.emails[index].value} required/>
-                                <button class="text-error hover:text-neutral-900 active:text-base-300 transition-all" on:click={() => removeEmailField(index)}>
+                                <input type="email" placeholder="Email Address" class="input input-bordered input-base-100 w-60 sm:w-72 md:w-96 xl:w-96" bind:value={formData.emails[index].value} required/>
+                                <button class="text-error hover:text-accent active:text-base-300 transition-all" on:click={() => removeEmailField(index)}>
                                     <Trash size={20} weight="fill"/>
                                 </button>
                             </div>
@@ -129,7 +129,7 @@
                     </div>
                 </div>
                 <div class="flex space-x-2 justify-end px-10 pt-5 pb-10">
-                    <button class="btn btn-outline btn-primary w-28" on:click={addEmailField}>
+                    <button class="btn btn-outline btn-secondary w-28" on:click={addEmailField}>
                         Add Email
                     </button>
                     <button class="btn btn-primary w-28" on:click={HandleReviewForm}>

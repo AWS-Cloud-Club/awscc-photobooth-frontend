@@ -3,7 +3,7 @@
     import { AWSCCLOGO } from "$lib/assets";
 </script>
 
-<div class="navbar bg-base-200">
+<div class="navbar bg-base-200 shadow border-b-4 border-primary">
     <div class="flex-1">
         <a href="/" class="flex items-center space-x-3 text-lg px-3">
           <img src="{AWSCCLOGO}" alt="" class="w-10 md:block">

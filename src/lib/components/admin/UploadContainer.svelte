@@ -64,21 +64,21 @@
     $: {}
 </script>
 
-<div class="flex flex-col items-center w-full p-10 rounded-lg bg-base-200 border-base-300 justify-between space-y-4">
+<div class="shadow flex flex-col items-center w-full p-10 rounded-lg bg-base-200 border-base-300 justify-between space-y-4">
     <div class="h-[40svh] flex flex-col justify-top space-y-4">
         <input type="file" multiple class="file-input file-input-bordered file-input-neutral w-full h-14 max-w-xs border" on:change={handleFileChange} />
-        <div class="hide-scrollbar overflow-y-auto h-full space-y-2 bg-base-300 p-2 rounded-lg">
+        <div class="hide-scrollbar overflow-y-auto h-full space-y-4 bg-base-300 p-4 rounded-lg shadow">
             {#if selectedImages.length === 0}
                 <div class="flex flex-col justify-center w-full items-center h-full">
-                    <img src="https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo" class="w-[75px] h-auto grayscale opacity-20" alt="AWSCC Pup Manila Logo">
+                    <img src="https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo" class="w-[75px] h-auto opacity-50" alt="AWSCC Pup Manila Logo">
                 </div>
             {:else}
                 {#each selectedImages as image, index (image.name)}
-                    <div class="flex items-center max-w-xs bg-neutral p-3 rounded-sm" data-index="{index}">
-                        <div class="w-full overflow-clip text-xs">
+                    <div class="shadow flex items-center max-w-xs bg-neutral p-3 rounded-sm" data-index="{index}">
+                        <div class="w-full overflow-clip text-xs text-neutral-content">
                             {image.name}
                         </div>
-                        <button class="text-error hover:text-base-100 active:text-base-300 transition-all" on:click={() => removeImage(index)}>
+                        <button class="text-error hover:text-base-100 active:text-accent transition-all" on:click={() => removeImage(index)}>
                             <X size={16} />
                         </button>
                     </div>

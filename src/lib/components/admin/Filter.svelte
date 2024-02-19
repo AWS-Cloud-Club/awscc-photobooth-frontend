@@ -35,7 +35,10 @@
 </div> -->
 
 <div class="dropdown dropdown-bottom dropdown-end">
-  <div tabindex="0" role="button" class="btn mb-1 flex flex-between min-w-min"><Funnel />{toSentenceCase(selectedOption) || "Filter"}</div>
+  <div tabindex="0" role="button" class="btn mb-1 flex min-w-min -space-x-1">
+    <span><Funnel size={14} weight="fill" /></span>
+    <span>{toSentenceCase(selectedOption) || "Filter"}</span>
+  </div>
   <ul tabindex="0" class="dropdown-content z-[1] menu shadow bg-base-100 rounded-lg">
     {#each Object.keys(filterOptions) as option}
     <button on:click={() => selectOption(option)} class="text-left hover:bg-base-200 active:bg-base-300">

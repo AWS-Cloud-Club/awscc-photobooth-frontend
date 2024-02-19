@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from 'svelte';
+    import { spaceHero } from '$lib/assets';
     // import { videoLinks } from '$lib/assets';
     let videoElement: HTMLVideoElement;
     let currentVideoIndex = 0; 
@@ -20,23 +21,20 @@
     </video>
 </div> -->
 
-<div class="hero h-[90svh]">
-    <div class="hero-overlay bg-opacity-40"></div>
+
+
+<!-- !!!!!!!!!!!!!!  pls fix d q mapagana pag tinatawag q si spaceHero !!!!!!!!!!!!!!!!  -->
+
+<div class=" object-center bg-cover bg-center bg-[url('https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/PhotoboothCover.png')] w-full h-[90svh]">
+    <!-- <div class="hero-overlay bg-opacity-40"></div> -->
 </div>
 
 
 <style>
-    .hero {
-        object-position: center;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        background-image: url('https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWS-Cloud-Club.jpg');
-    }
-    #awsccvideo {
+    /* #awsccvideo {
         position: relative;
         width: 100%;
         height:  100%;
         object-fit: cover;
-    }
+    } */
 </style>
