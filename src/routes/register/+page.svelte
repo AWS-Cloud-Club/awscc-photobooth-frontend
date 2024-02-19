@@ -5,17 +5,13 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { goto } from "$app/navigation";
-    import { Trash } from "phosphor-svelte"
+    import { Trash } from "phosphor-svelte";
+    import { space, imageLinks } from "$lib/assets";
 
     // temporary ^^
     let currentAlfIndex = 0;
 
-    const alf_urls = [
-        '/Waving-Alf1.png',
-        'HandsUp-Alf2.png',
-        'HandsUp-Alf3.png',
-        'HandsUp-Alf4.png'
-    ]
+    const alf_urls = imageLinks;
 
     interface Email {
         value: string;
@@ -102,7 +98,7 @@
     $: imgSrc = alf_urls[currentAlfIndex];
 </script>
 
-<div class="h-[90svh] flex justify-center items-center bg-[url('/Space.png')] bg-cover bg-center bg-no-repeat relative">
+<div class="h-[90svh] flex justify-center items-center bg-cover bg-center bg-no-repeat relative" style=" background-image: url({space})">
     <div class="absolute inset-0 bg-base-300 opacity-50 h-[90svh]"></div>
     <div class="flex relative">
         <img src="{imgSrc}" alt="AWSCC PUP - Alf" class="h-[300px] absolute -left-10 bottom-0 z-[1] hidden lg:block sm:hidden md:h-[325px] xl:h-[350px]"/>

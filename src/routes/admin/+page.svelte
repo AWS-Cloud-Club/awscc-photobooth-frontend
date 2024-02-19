@@ -18,7 +18,7 @@
     };
 
     let requestQueue =  data;
-    let requestData:Request[] | null = [];
+    let requestData:Request[] | null = null;
     let emails:string[] = [];
     let status:string = "";
     let point_person:string = "";
@@ -95,7 +95,7 @@
                 <EmailsContainer {emails}/>
             </div>
         </div>
-        <div class="w-full h-[80svh] h-full flex flex-col items-center space-y-3">
+        <div class="w-full h-[80svh] flex flex-col items-center space-y-3">
             <div class="w-full flex justify-end pb-1">
                 <DeleteButton {request_id}/>
             </div>

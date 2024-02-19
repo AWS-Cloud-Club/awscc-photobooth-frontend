@@ -1,11 +1,12 @@
 <script>
     import ThemeChanger from "./admin/ThemeChanger.svelte";
+    import { AWSCCLOGO } from "$lib/assets";
 </script>
 
 <div class="navbar bg-base-200">
     <div class="flex-1">
         <a href="/" class="flex items-center space-x-3 text-lg px-3">
-          <img src="https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo" alt="" class="w-10 md:block">
+          <img src="{AWSCCLOGO}" alt="" class="w-10 md:block">
           <span class="hidden md:block">AWSCC-PUP Manila Photobooth</span>
         </a>
       </div>
