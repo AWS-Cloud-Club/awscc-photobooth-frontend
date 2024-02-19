@@ -5,7 +5,13 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { goto } from "$app/navigation";
-    import { Trash } from "phosphor-svelte"
+    import { Trash } from "phosphor-svelte";
+    import { space, imageLinks } from "$lib/assets";
+
+    // temporary ^^
+    let currentAlfIndex = 0;
+
+    const alf_urls = imageLinks;
 
     interface Email {
         value: string;
@@ -23,6 +29,9 @@
             ...formData,
             emails: [...formData.emails, { value: "" }]
         };
+
+        // temporary
+        getAlfUrl();
     }
 
     function removeEmailField(index: number) {
@@ -31,6 +40,22 @@
                 ...formData,
                 emails: formData.emails.filter((_, i) => i !== index)
             };
+        }
+
+
+        // temporary
+        getAlfUrl();
+    }
+
+    function getAlfUrl(){
+        const newIndex = formData.emails.length;
+        console.log("newIndex", newIndex)
+        if (newIndex == 1){
+            currentAlfIndex = 0;
+        } else if (newIndex >= 2 && newIndex <= 4) {
+            currentAlfIndex = newIndex - 1;
+        } else {
+            currentAlfIndex = 3;
         }
     }
 
@@ -69,41 +94,63 @@
             console.log(savedFormData);
         }
     });
+
+    $: imgSrc = alf_urls[currentAlfIndex];
 </script>
 
-
-<div class="container">
-    <form on:submit|preventDefault={validateForm}>
-        <div>Point Person
-            <input type="text" placeholder="Point Person's Name" class="input input-bordered input-primary w-full max-w-xs" bind:value={formData.pointPerson} required/>
+<div class="h-[90svh] flex justify-center items-center bg-cover bg-center bg-no-repeat relative" style=" background-image: url({space})">
+    <div class="absolute inset-0 bg-base-300 opacity-20 h-[90svh]"></div>
+    <div class="flex relative">
+        <img src="{imgSrc}" alt="AWSCC PUP - Alf" class="h-[300px] absolute -left-10 bottom-0 z-[1] hidden lg:block sm:hidden md:h-[325px] xl:h-[350px]"/>
+        <div class="w-[280px] hidden lg:block sm:hidden md:w-[280px] xl:w-[315px]"></div>
+        <div class="bg-base-100 bg-opacity-80 rounded-2xl shadow-md h-[70svh]">
+            <form on:submit|preventDefault={validateForm} class="flex flex-col justify-between h-full">
+                <div class="space-y-4 flex-1 h-full">
+                    <div class="space-y-2 bg-base-300 px-10 pt-10 pb-5 rounded-t-xl">
+                        <div>
+                            Point Person
+                        </div>
+                        <input type="text" placeholder="Name" class="input input-bordered input-base-200 w-full" bind:value={formData.pointPerson} required/>
+                    </div>
+                    <div class="hide-scrollbar h-[35svh] overflow-auto space-y-4 px-10 pb-5">
+                    {#each formData.emails as {value}, index(index)}
+                        <div class="space-y-2">
+                            <div>
+                                Email Address {index + 1}
+                            </div>
+                            <div class="flex space-x-2">
+                                <input type="email" placeholder="Email Address" class="input input-bordered input-base-100 w-60 sm:w-72 md:w-96 xl:w-96" bind:value={formData.emails[index].value} required/>
+                                <button class="text-error hover:text-accent active:text-base-300 transition-all" on:click={() => removeEmailField(index)}>
+                                    <Trash size={20} weight="fill"/>
+                                </button>
+                            </div>
+                        </div>
+                    {/each}
+                    </div>
+                </div>
+                <div class="flex space-x-2 justify-end px-10 pt-5 pb-10">
+                    <button class="btn btn-outline btn-secondary w-28" on:click={addEmailField}>
+                        Add Email
+                    </button>
+                    <button class="btn btn-primary w-28" on:click={HandleReviewForm}>
+                        Review
+                    </button>
+                </div>
+            </form>
         </div>
-        {#each formData.emails as {value}, index(index)}
-        <div>
-            Email Address {index + 1}
-        </div>
-        <div class="flex">
-            <input type="email" placeholder="Email Address" class="input input-bordered input-primary w-full max-w-xs" bind:value={formData.emails[index].value} required/>
-            <button class="btn btn-ghost" on:click={() => removeEmailField(index)}><Trash size={28} color="#df1111" weight="fill"/></button>
-        </div>
-        {/each}
-        <div>
-            <button class="btn btn-primary" on:click={addEmailField}>
-                Add Email
-            </button>
-        </div>
-        <div>
-            <button class="btn btn-primary" on:click={HandleReviewForm}>
-                Review
-            </button>
-        </div>
-    </form>
+    </div>
 </div>
 
-<style lang=scss>
-    .container {
-        @apply min-h-screen flex justify-center items-center;
+<style>
+    .hide-scrollbar::-webkit-scrollbar-track {
+        display: none;
     }
-    input {
-        @apply p-5
+
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar-thumb {
+        display: none;
     }
 </style>

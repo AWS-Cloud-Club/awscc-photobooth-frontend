@@ -2,3 +2,8 @@ alf animation: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/a
 awscc event teaser: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC+Event+Teaser.mp4
 awscc final alf launch: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/final+alf+lunch.mp4
 awscc logo: https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo
+alf1 = https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/Waving-Alf1.png
+alf2 = https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/HandsUp-Alf2.png
+alf3 = https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/HandsUp-Alf3.png
+alf4 = https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/HandsUp-Alf4.png
+space = https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/Space.png

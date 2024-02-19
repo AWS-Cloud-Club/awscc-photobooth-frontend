@@ -1,10 +1,13 @@
 <script>
     import { Navbar, Footer } from "$lib/components/necessities";
+    import { theme } from "$lib/stores/ThemeStore";
 </script>
 
-<Navbar />
+<div class="scrollbar" data-theme="{$theme}">
+    <Navbar />
     <slot />
-<Footer />
+    <Footer />
+</div>
 
 <style lang=scss>
 </style>

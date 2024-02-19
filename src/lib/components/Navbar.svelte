@@ -1,12 +1,21 @@
-<div class="navbar bg-base-100">
-    <div class="flex-1">
-        <a href="/" class="btn btn-ghost text-xl"><img src="https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/AWSCC-PUP-Logo" alt="" class="w-10">AWSCC-PUP Manila Photobooth</a>
-    </div>
+<script>
+    import ThemeChanger from "./admin/ThemeChanger.svelte";
+    import { AWSCCLOGO } from "$lib/assets";
+</script>
 
-    <div class="flex-none">
+<div class="navbar bg-base-200 shadow border-b-4 border-primary">
+    <div class="flex-1">
+        <a href="/" class="flex items-center space-x-3 text-lg px-3">
+          <img src="{AWSCCLOGO}" alt="" class="w-10 md:block">
+          <span class="hidden md:block">AWSCC-PUP Manila Photobooth</span>
+        </a>
+      </div>
+
+    <div class="flex space-x-2 pr-3">
         <ul class="menu menu-horizontal px-1">
             <li><a href="/register">Register</a></li>
             <li><a href="/admin">Admin</a></li>
         </ul>
+        <ThemeChanger />
     </div>
 </div>
