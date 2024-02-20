@@ -104,7 +104,7 @@
             <h2 class="text-content font-bold text-sm pl-2 text-neutral-content"><span>{filterOption} Requests:</span></h2>
             <Filter />
         </div>
-        <div class="hide-scrollbar overflow-y-auto max-h-[65svh]">
+        <div class="hide-scrollbar overflow-auto h-[65svh]">
             <QueueList {requestQueue}/>
         </div>
     </div>
