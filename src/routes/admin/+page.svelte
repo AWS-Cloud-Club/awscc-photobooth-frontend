@@ -12,6 +12,12 @@
     export let data;
     const { requests } = data;
 
+    let filterOption:string = "";
+
+  chosenFilter.subscribe((value) => {
+    filterOption = value?.toUpperCase();
+  });
+
     interface Request {
         request_id: string;
         emails: string[];
@@ -80,6 +86,10 @@
 <div class="h-[90svh] flex">
     <div class="md:w-[35svw] lg:w-[30svw] xl:w-[30svw] p-6 space-y-5 bg-neutral">
         <TotalQueue {totalQueue}/>
+        <div class="flex justify-between items-center">
+            <h2 class="text-content font-bold text-sm pl-2"><span>{filterOption} Requests:</span></h2>
+            <Filter />
+        </div>
         <div class="hide-scrollbar overflow-y-auto max-h-[70svh]">
             <QueueList {requestQueue}/>
         </div>
