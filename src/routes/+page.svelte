@@ -7,6 +7,3 @@
 </svelte:head>
 
 <Hero />
-
-<style lang=scss>
-</style>
