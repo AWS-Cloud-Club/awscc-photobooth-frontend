@@ -4,6 +4,7 @@
   export function show() {
     isVisible = true;
   };
+  //ayoko na
 
   let image = "";
   let phrase = "";
