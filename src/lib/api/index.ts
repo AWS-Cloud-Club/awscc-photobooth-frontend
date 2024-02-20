@@ -54,6 +54,7 @@ export async function getRequests() {
         console.log("Getting Requests");
         const response = await fetch (`${PUBLIC_PHOTOBOOTH_URL}/get_requests`);
         const data = await response.json();
+        console.log("Data", data);
         return data;
     } catch (err) {
         console.error(err);

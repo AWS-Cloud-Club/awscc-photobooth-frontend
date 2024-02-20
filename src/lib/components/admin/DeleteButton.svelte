@@ -1,5 +1,7 @@
 <script lang="ts">
     import { cancelRequest } from "$lib/api";
+    import { Refetch  } from "$lib/stores/RefetchStore";
+
 
     export let request_id: string = "";
 
@@ -9,6 +11,7 @@
         try {
             const response = await cancelRequest(request_id);
             console.log(response);
+            Refetch.set(true);
         } catch (error) {
             console.error(error);
         }

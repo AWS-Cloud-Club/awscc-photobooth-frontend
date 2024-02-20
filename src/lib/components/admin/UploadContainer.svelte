@@ -4,8 +4,30 @@
     import { alfUFO } from '$lib/assets';
     let selectedImages: File[] = [];
     import { sendRequest } from "$lib/api";
+    import {UploadModal} from "$lib/components/admin";
+
+
+    // async function uploadImages() {
+    //     if (selectedImages.length === 0) {
+    //         return;
+    //     }
+
+    //     const formData = new FormData();
+    //     for (const image of selectedImages) {
+    //         formData.append('images', image);
+    //         console.log(`Uploading image: ${image.name}`);
+    //     }
+
+    //     const response = await sendRequest({files: formData, request_id: request_id});
+    //     console.log(response);
+
+    //     selectedImages = [];
+
+    //     (document.querySelector('.file-input') as HTMLInputElement).value = '';
+    // }
 
     async function uploadImages() {
+    try {
         if (selectedImages.length === 0) {
             return;
         }
@@ -22,7 +44,25 @@
         selectedImages = [];
 
         (document.querySelector('.file-input') as HTMLInputElement).value = '';
+
+        const modal = new UploadModal({
+            target: document.body,
+            props: {
+                status: "success"
+            }
+        });
+        modal.show();
+    } catch (error) {
+        console.error(`An error occurred while uploading images: ${error}`);
+        const modal = new UploadModal({
+            target: document.body,
+            props: {
+                status: "error"
+            }
+        });
+        modal.show();
     }
+}
 
     function handleFileChange(event: Event & { currentTarget: HTMLInputElement }) {
         const fileInput = event.currentTarget;
@@ -41,8 +81,6 @@
         const fileInput = document.querySelector('.file-input') as HTMLInputElement;
         fileInput.files = dataTransfer.files;
     }
-
-    $: {}
 </script>
 
 <div class="shadow flex flex-col items-center w-full p-10 rounded-lg bg-base-200 border-base-300 justify-between space-y-4">
