@@ -87,10 +87,10 @@
     <div class="md:w-[35svw] lg:w-[30svw] xl:w-[30svw] p-6 space-y-5 bg-neutral">
         <TotalQueue {totalQueue}/>
         <div class="flex justify-between items-center">
-            <h2 class="text-content font-bold text-sm pl-2"><span>{filterOption} Requests:</span></h2>
+            <h2 class="text-content font-bold text-sm pl-2 text-neutral-content"><span>{filterOption} Requests:</span></h2>
             <Filter />
         </div>
-        <div class="hide-scrollbar overflow-y-auto max-h-[70svh]">
+        <div class="hide-scrollbar overflow-y-auto max-h-[65svh]">
             <QueueList {requestQueue}/>
         </div>
     </div>

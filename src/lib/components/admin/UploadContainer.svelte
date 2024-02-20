@@ -3,23 +3,7 @@
     export let request_id:string = "";
     import { alfUFO } from '$lib/assets';
     let selectedImages: File[] = [];
-
-    // async function uploadImages(){
-    //     const fileInput = document.querySelector('.file-input') as HTMLInputElement;
-    //     const files = fileInput.files;
-    //     if(files){
-    //         const formData = new FormData();
-    //         for(let i = 0; i < files.length; i++){
-    //             formData.append('images', files[i]);
-    //         }
-    //         formData.append('request_id', request_id);
-    //         console.log(formData);
-    //         for (var pair of formData.entries()) {
-    //             console.log(pair[0]+ ', ' + pair[1]);
-    //         }
-    //     }
-    //     selectedImages = [];
-    // }
+    import { sendRequest } from "$lib/api";
 
     async function uploadImages() {
         if (selectedImages.length === 0) {
@@ -31,12 +15,9 @@
             formData.append('images', image);
             console.log(`Uploading image: ${image.name}`);
         }
-        formData.append('request_id', request_id);
 
-        console.log('Form ');
-        for (const [name, value] of formData.entries()) {
-            console.log(`- ${name}: ${value}`);
-        }
+        const response = await sendRequest({files: formData, request_id: request_id});
+        console.log(response);
 
         selectedImages = [];
 
