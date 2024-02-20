@@ -14,4 +14,21 @@ export async function createRequest(payload:any) {
     } catch (err) {
         console.error(err);
     }
+};
+
+export async function sendRequest(data: any) {
+	try {
+		console.log('Sending Request');
+
+		data.files.append('request_id', data.request_id); // Append the request_id to the formData object
+
+		const response = await fetch(`${PUBLIC_PHOTOBOOTH_URL}/upload`, {
+			method: 'POST',
+			body: data.files // Pass the formData object directly as the body
+		});
+
+		console.log('Response', response);
+	} catch (err) {
+		console.error(err);
+	}
 }
