@@ -4,6 +4,7 @@
     import { goto } from '$app/navigation';
     import { space } from '$lib/assets'
     import { User, Envelope } from 'phosphor-svelte'
+    import { createRequest } from '$lib/api';
 
 
     function goBack() {
@@ -20,12 +21,15 @@
         try {
             console.log("Form Submitted");
             console.log('Payload', payload);
+            await createRequest(payload);
             goto('/register/review/success');
             localStorage.removeItem("formData");
         } catch (err) {
             console.error(err);
         }
     }
+
+
 </script>
 
 <div class="h-[90svh] flex justify-center items-center  bg-cover bg-center bg-no-repeat relative" style="background-image: url({space})">

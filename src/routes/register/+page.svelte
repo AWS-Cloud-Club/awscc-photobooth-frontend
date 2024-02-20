@@ -19,7 +19,8 @@
 
     let formData = {
         pointPerson: "",
-        emails: [{ value: "" }]
+        emails: [{ value: "" }],
+        status: "pending"   
     };
 
     let error: string = "";
