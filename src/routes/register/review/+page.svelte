@@ -20,8 +20,8 @@
         try {
             console.log("Form Submitted");
             console.log('Payload', payload);
-            // goto('/register/review/success');
-            // localStorage.removeItem("formData");
+            goto('/register/review/success');
+            localStorage.removeItem("formData");
         } catch (err) {
             console.error(err);
         }

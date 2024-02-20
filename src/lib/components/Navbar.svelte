@@ -1,5 +1,5 @@
 <script>
-    import ThemeChanger from "./admin/ThemeChanger.svelte";
+    import ThemeChanger from "./ThemeChanger.svelte";
     import { AWSCCLOGO } from "$lib/assets";
 </script>
 
