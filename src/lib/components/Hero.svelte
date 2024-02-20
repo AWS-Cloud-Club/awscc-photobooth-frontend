@@ -20,10 +20,7 @@
 </div> -->
 
 
-
-<!-- !!!!!!!!!!!!!!  s fix d q mapagana pag tinatawag q si spaceHero !!!!!!!!!!!!!!!!  -->
-
-<div class=" object-center bg-cover bg-center bg-[url('https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/PhotoboothCover.png')] w-full h-[90svh]" style="background-image:({spaceHero})">
+<div class=" object-center bg-cover bg-center w-full h-[90svh]" style="background-image:url({spaceHero})">
     <!-- <div class="hero-overlay bg-opacity-40"></div> -->
 </div>
 
