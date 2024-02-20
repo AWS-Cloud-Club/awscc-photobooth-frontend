@@ -4,9 +4,9 @@
     import { alfUFO } from '$lib/assets';
     let selectedImages: File[] = [];
     import { sendRequest } from "$lib/api";
-    import {UploadModal} from "$lib/components/admin";
+    import { UploadStatus } from "$lib/components/admin";
 
-
+    export let status:string;
     // async function uploadImages() {
     //     if (selectedImages.length === 0) {
     //         return;
@@ -45,22 +45,27 @@
 
         (document.querySelector('.file-input') as HTMLInputElement).value = '';
 
-        const modal = new UploadModal({
-            target: document.body,
-            props: {
-                status: "success"
-            }
-        });
-        modal.show();
+        status = "SUCCESS";
+        console.log(status);
+        // const modal = new UploadModal({
+        //     target: document.body,
+        //     props: {
+        //         status: "success"
+        //     }
+        // });
+        // modal.show();
     } catch (error) {
         console.error(`An error occurred while uploading images: ${error}`);
-        const modal = new UploadModal({
-            target: document.body,
-            props: {
-                status: "error"
-            }
-        });
-        modal.show();
+
+        status = "ERROR";
+        console.log(status);
+        // const modal = new UploadModal({
+        //     target: document.body,
+        //     props: {
+        //         status: "error"
+        //     }
+        // });
+        // modal.show();
     }
 }
 
@@ -106,7 +111,14 @@
         </div>
     </div>
     <div>
-        <button on:click={uploadImages} class="btn btn-outline btn-primary">Submit</button>
+        <label for="my_modal_1" class="btn btn-outline btn-primary {selectedImages.length === 0 ? 'pointer-events-none opacity-10' : ''}" on:click={uploadImages}>Submit</label>
+        <input type="checkbox" id="my_modal_1" class="modal-toggle"/>
+        <div class="modal" role="dialog">
+            <div class="modal-box bg-base-200 w-72">
+              <UploadStatus statusModal={status} />
+            </div>
+            <label class="modal-backdrop" for="my_modal_1">Close</label>
+        </div>
     </div>
 </div>
 

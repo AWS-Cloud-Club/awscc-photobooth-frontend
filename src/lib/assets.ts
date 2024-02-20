@@ -23,5 +23,6 @@ export const alfUFO = 'https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/
 export const space = 'https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/Space.png';
 export const spaceHero = 'https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/PhotoboothCover.png';
 export const alfHuhu = 'https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/Aww+Alf.png';
+export const alfSwag = 'https://awscc-photobooth.s3.ap-southeast-1.amazonaws.com/assets/Swag+Alf.png';
 
 export const imageLinks = [alf1, alf2, alf3, alf4]
