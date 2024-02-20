@@ -11,10 +11,10 @@
   });
 
   interface QueueItem {
-    request_id: string;
+    requestId: string;
     emails: Array<string>;
     status: string;
-    point_person: string;
+    pointPerson: string;
   }
 
   export let requestQueue:QueueItem[] = [];
@@ -26,12 +26,12 @@
   <Filter />
 </div> -->
 <div class="w-full h-screen rounded-lg px-2 py-2 gap-3 flex flex-col">
-  {#each requestQueue as { request_id, emails, status, point_person } (request_id)}
+  {#each requestQueue as { requestId, emails, status, pointPerson } (requestId)}
       <RequestButton 
-        request_id={request_id} 
+        request_id={requestId} 
         emails={emails} 
         status={status} 
-        point_person={point_person}
+        point_person={pointPerson}
       />
   {/each}
 </div>

@@ -31,7 +31,7 @@
       <div class="row-span-2 row-start-3 flex justify-center items-center">
         <ClipboardText size={46} weight="fill"/>
       </div>
-      <div class="col-span-2 row-span-2 row-start-2 col-start-2 flex items-start text-sm">Request {request_id}</div>
+      <div class="col-span-2 row-span-2 row-start-2 col-start-2 flex items-start text-sm">{request_id}</div>
       <div class="col-span-3 row-span-1 col-start-2 row-start-4  gap-2 items-center text-sm gap inline-flex">View Request <ArrowRight size={12}/>
       </div>
   </button>
