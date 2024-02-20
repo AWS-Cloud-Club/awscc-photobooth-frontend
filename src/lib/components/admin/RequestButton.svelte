@@ -9,7 +9,6 @@
 
 
   async function chooseRequest(){
-    console.log("Request chosen", request_id);
 
     if(localStorage.getItem("showRequest") === "true"){
       localStorage.setItem("showRequest", "false");

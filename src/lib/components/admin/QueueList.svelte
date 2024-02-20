@@ -7,7 +7,6 @@
   let filterOption:string = "";
 
   chosenFilter.subscribe((value) => {
-    console.log("Chosen Filter", value);
     filterOption = value?.toUpperCase();
   });
 

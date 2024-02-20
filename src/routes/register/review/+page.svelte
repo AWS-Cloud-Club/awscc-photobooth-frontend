@@ -1,8 +1,10 @@
 <script lang="ts">
+
     import { onMount } from'svelte';
     import { goto } from '$app/navigation';
     import { space } from '$lib/assets'
     import { User, Envelope } from 'phosphor-svelte'
+
 
     function goBack() {
         history.back();
@@ -14,18 +16,17 @@
     let emails: String[] = payload.emails ? payload.emails.map((email: {value: string}) => email.value) : [];
     let pointPerson = payload.pointPerson ? payload.pointPerson : "Not Available";
 
-    function onSubmit() {
+    async function onSubmit() {
         try {
             console.log("Form Submitted");
             console.log('Payload', payload);
-            goto('/register/review/success');
-            localStorage.removeItem("formData");
+            // goto('/register/review/success');
+            // localStorage.removeItem("formData");
         } catch (err) {
             console.error(err);
         }
     }
 </script>
-
 
 <div class="h-[90svh] flex justify-center items-center  bg-cover bg-center bg-no-repeat relative" style="background-image: url({space})">
     <div class="absolute inset-0 bg-base-300 opacity-20 h-[90svh]"></div>

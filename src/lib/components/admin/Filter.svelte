@@ -14,7 +14,6 @@
     function selectOption(option:string){
         selectedOption = option;
         chosenFilter.set(option);
-        console.log("Selected Option", selectedOption);
     }
 
     function toSentenceCase(str: string): string {
@@ -23,16 +22,6 @@
     }
 </script>
 
-<!-- <div class="dropdown">
-  <div tabindex="0" role="button" class="btn m-1"> <Funnel /> Filter</div>
-  <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-    {#each Object.keys(filterOptions) as option}
-    <button on:click={() => selectOption(option)}>
-        <li class="menu-title">{filterOptions[option]}</li>
-    </button>
-    {/each}
-  </ul>
-</div> -->
 
 <div class="dropdown dropdown-bottom dropdown-end">
   <div tabindex="0" role="button" class="btn mb-1 flex min-w-min -space-x-1">

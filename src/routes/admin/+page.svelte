@@ -4,11 +4,13 @@
 
 <script lang="ts">
     import { TotalQueue, QueueList, DeleteButton, EmailsContainer, UploadContainer, DefaultPane, RequestDetails, Filter } from "$lib/components/admin";
-    import { data } from '$lib/index';
     import { Envelope } from "phosphor-svelte";
     import { chosenRequest } from "$lib/stores/RequestStore";
 	import { onMount } from "svelte"
     import { chosenFilter } from "$lib/stores/FilterOptionStore";
+
+    export let data;
+    const { requests } = data;
 
     interface Request {
         request_id: string;
@@ -34,28 +36,26 @@
     chosenFilter.subscribe(filter => {
         switch(filter){
         case "all":
-            requestQueue = data;
+            requestQueue = requests;
             break;
         case "pending":
-            requestQueue = data.filter((request:Request) => request.status === "pending");
+            requestQueue = requests.filter((request:Request) => request.status === "pending");
             break;
         case "sent":
-            requestQueue = data.filter((request:Request) => request.status === "sent");
+            requestQueue = requests.filter((request:Request) => request.status === "sent");
             break;
         case "cancelled":
-            requestQueue = data.filter((request:Request) => request.status === "cancelled");
+            requestQueue = requests.filter((request:Request) => request.status === "cancelled");
             break;
             default:
-                requestQueue = data;
+                requestQueue = requests;
             }
-
+``
             requestQueue.sort(sortRequests);
-            console.log("Request Queue", requestQueue);
         });
 
 
     chosenRequest.subscribe(value => {
-        console.log("Chosen Request", value);
         requestData = value;
     });
 

@@ -1,6 +1,5 @@
 <script lang="ts">
   export let emails:Array<string> = [];
-  console.log("Emails", emails);
 </script>
 
 {#each emails as email, index (email)}
