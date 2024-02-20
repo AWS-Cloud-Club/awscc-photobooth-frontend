@@ -19,7 +19,6 @@
     </video>
 </div> -->
 
-
 <div class=" object-center bg-cover bg-center w-full h-[90svh]" style="background-image:url({spaceHero})">
     <!-- <div class="hero-overlay bg-opacity-40"></div> -->
 </div>

@@ -8,23 +8,11 @@
     import { chosenRequest } from "$lib/stores/RequestStore";
 	import { onMount } from "svelte"
     import { chosenFilter } from "$lib/stores/FilterOptionStore";
+    import { Refetch } from "$lib/stores/RefetchStore";
 
     export let data;
     const { requests } = data;
-
     let filterOption:string = "";
-
-  chosenFilter.subscribe((value) => {
-    filterOption = value?.toUpperCase();
-  });
-
-    interface Request {
-        request_id: string;
-        emails: string[];
-        status: string;
-        point_person: string;
-    };
-
     let requestQueue =  data;
     let requestData:Request[] | null = null;
     let emails:string[] = [];
@@ -34,11 +22,27 @@
     let showRequest:boolean = false;
     let totalQueue: number = 0;
 
-    function sortRequests(requestA: Request, requestB:Request) {
-        return Number(requestA.request_id) - Number(requestB.request_id);
-    }
+    interface Request {
+        request_id: string;
+        emails: string[];
+        status: string;
+        point_person: string;
+    };
 
-    
+    Refetch.subscribe(async value => {
+        if(value){
+            window.location.reload();
+        };
+
+        setTimeout(() => {
+            Refetch.set(false);
+        }, 200);
+    });
+
+    chosenFilter.subscribe((value) => {
+        filterOption = value?.toUpperCase();
+    });
+
     chosenFilter.subscribe(filter => {
         switch(filter){
         case "all":
@@ -60,7 +64,6 @@
             requestQueue.sort(sortRequests);
         });
 
-
     chosenRequest.subscribe(value => {
         requestData = value;
     });
@@ -72,14 +75,25 @@
         request_id = requestData?.request_id;
     }
 
-    onMount(() => {
+    function sortRequests(requestA: Request, requestB:Request) {
+        return Number(requestA.request_id) - Number(requestB.request_id);
+    };
+
+    function showRequestDetails(){
         setTimeout(() => {
             if(localStorage.getItem("showRequest") === "true"){
-                showRequest = true;
+            showRequest = true;
             }
-        }, 1000); 
+        }, 200);
+    }
 
+    function setTotalQueue(){
         totalQueue = requestQueue.filter((request:Request) => request.status === "pending").length;
+    };
+
+    onMount(() => {
+        showRequestDetails();
+        setTotalQueue();
     });
 </script>
 
