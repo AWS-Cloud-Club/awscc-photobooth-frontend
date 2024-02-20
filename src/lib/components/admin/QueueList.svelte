@@ -25,7 +25,7 @@
   <h2 class="text-content font-bold text-sm pl-2"><span>{filterOption} Requests:</span></h2>
   <Filter />
 </div> -->
-<div class="w-full h-screen rounded-lg overflow-y-auto px-2 py-2 gap-3 flex flex-col">
+<div class="w-full h-screen rounded-lg px-2 py-2 gap-3 flex flex-col">
   {#each requestQueue as { request_id, emails, status, point_person } (request_id)}
       <RequestButton 
         request_id={request_id} 
