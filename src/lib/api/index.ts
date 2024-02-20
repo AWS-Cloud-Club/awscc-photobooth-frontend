@@ -32,3 +32,31 @@ export async function sendRequest(data: any) {
 		console.error(err);
 	}
 }
+
+export async function cancelRequest(request_id:string) {
+    try {
+        console.log("Cancelling Request");
+        const response = await fetch (`${PUBLIC_PHOTOBOOTH_URL}/cancel`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({request_id})
+        });
+    } catch (err) {
+        console.error(err);
+        return false;
+    }
+}
+
+export async function getRequests() {
+    try {
+        console.log("Getting Requests");
+        const response = await fetch (`${PUBLIC_PHOTOBOOTH_URL}/get_requests`);
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        console.error(err);
+        return false;
+    }
+}

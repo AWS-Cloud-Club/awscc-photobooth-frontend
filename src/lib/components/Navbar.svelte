@@ -14,7 +14,7 @@
     <div class="flex space-x-2 pr-3">
         <ul class="menu menu-horizontal px-1">
             <li><a href="/register">Register</a></li>
-            <li><a href="/admin" data-sveltekit-preload-data >Admin</a></li>
+            <li><a href="/admin" >Admin</a></li>
         </ul>
         <ThemeChanger />
     </div>
