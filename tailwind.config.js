@@ -9,7 +9,7 @@ export default {
 	daisyui: {
 		themes: [
 			{
-				awsccDark: {
+				dark: {
 					primary: '#D1A5EA',
 					secondary: '#956BBD',
 					accent: '#42467F',
@@ -20,7 +20,7 @@ export default {
 					warning: '#DDD35B',
 					error: '#DD5B5B'
 				},
-				awsccLight: {
+				light: {
 					primary: '#491F62',
 					secondary: '#A989C7',
 					accent: '#42467F',
