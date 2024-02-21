@@ -14,3 +14,4 @@ HOME
 /src/lib/assets/videos/
 *.mp4
 pnpm-lock.yaml
+package-lock.json
