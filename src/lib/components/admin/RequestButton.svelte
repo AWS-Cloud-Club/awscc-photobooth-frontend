@@ -9,7 +9,6 @@
 
 
   async function chooseRequest(){
-
     if(localStorage.getItem("showRequest") === "true"){
       localStorage.setItem("showRequest", "false");
     } else {

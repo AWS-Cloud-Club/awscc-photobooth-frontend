@@ -1,0 +1,16 @@
+import { PUBLIC_PHOTOBOOTH_URL } from '$env/static/public';
+
+export default () => ({
+	login(username, password) {
+    return fetch(`${PUBLIC_PHOTOBOOTH_URL}/login`, {
+      mode: 'no-cors',
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({
+        username,
+        password
+      })
+    });
+  }
+});
