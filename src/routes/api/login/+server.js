@@ -14,8 +14,8 @@ export async function POST({ request, cookies, fetch }) {
 
 	const responseData = await response.json();
 
-	cookies.set('token', responseData.token, { path: '/', domain: '13.250.95.130' });
-	console.log('Admin Login...')
+	cookies.set('token', responseData.token, { path: '/' });
+	console.log('Admin Login...');
 	console.log(responseData.message);
 
 	return json({ message: responseData.message });
