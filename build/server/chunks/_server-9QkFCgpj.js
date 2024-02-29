@@ -11,10 +11,11 @@ async function POST({ request, cookies, fetch }) {
     body: JSON.stringify(data)
   });
   const responseData = await response.json();
-  cookies.set("token", responseData.token, { path: "/", sameSite: "Lax" });
+  cookies.set("token", responseData.token, { path: "/" });
   console.log("Admin Login...");
+  console.log(responseData.message);
   return json({ message: responseData.message });
 }
 
 export { POST };
-//# sourceMappingURL=_server-20wELSv5.js.map
+//# sourceMappingURL=_server-9QkFCgpj.js.map
