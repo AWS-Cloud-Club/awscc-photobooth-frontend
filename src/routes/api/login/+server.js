@@ -5,7 +5,6 @@ export async function POST({ request, cookies, fetch }) {
 	const data = await request.json();
 
 	const response = await fetch(`${PUBLIC_PHOTOBOOTH_URL}/login`, {
-		mode: 'cors',
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -15,7 +14,7 @@ export async function POST({ request, cookies, fetch }) {
 
 	const responseData = await response.json();
 
-	cookies.set('token', responseData.token, { path: '/', sameSite: 'None', secure: true});
+	cookies.set('token', responseData.token, { path: '/', sameSite: 'Lax'});
 	console.log('Admin Login...')
 
 	return json({ message: responseData.message });
