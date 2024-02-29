@@ -1,40 +1,23 @@
-# PHOTOBOOTH APP
+# AWSCC-PUP Manila Photobooth App
 
-# create-svelte
+This is a web application built using SvelteKit, Tailwind CSS, and Daisy UI. It works with the AWS Serverless Backend, allowing requestors to create photo requests and admins to upload pictures, template the images, send them to requestors, and cancel requests.
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+## Instructions to Run Locally
 
-## Creating a project
+To run the application locally, follow these steps:
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Open a terminal or command prompt.
+2. Navigate to the project directory.
+3. Run the following command to install the dependencies:
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+  ```bash
+  npm install
+  npm run build
+  npm run dev # for dev server
+  ```
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+ ## To run in a hosted environment
+  ```bash
+  ORIGIN=http://localhost:3000 node server.js
+  ```
